@@ -1,4 +1,4 @@
-# LUCID-Enhanced-Deep-Learning-Solution-for-DDoS-Attack-Detection
+# LUCID++: Enhanced Deep-Learning Solution for DDoS Attack Detection
 
 ## Project Metadata
 ### Authors
