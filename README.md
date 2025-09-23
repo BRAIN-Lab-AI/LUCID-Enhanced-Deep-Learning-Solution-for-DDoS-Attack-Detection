@@ -24,20 +24,20 @@ The project is situated at the intersection of cybersecurity and deep learning, 
 ## What is the paper trying to do, and what are you planning to do?
 The original LUCID work focuses on applying a convolutional neural network to network flow features for lightweight and accurate DDoS detection. It shows that a deep learning–based approach can outperform traditional detection methods across benchmark intrusion detection datasets.
 
-LUCID++ aims to:
+**LUCID++** aims to:
 
-Model Optimization: Investigate methods to improve performance metrics (accuracy, F1-score, macro-F1, AUC) through refined training and evaluation strategies.
+- Model Optimization: Investigate methods to improve performance metrics (accuracy, F1-score, macro-F1, AUC) through refined training and evaluation strategies.
 
-Data Handling Enhancements: Explore better preprocessing and class-imbalance handling to improve detection of diverse and minority attack patterns.
+- Data Handling Enhancements: Explore better preprocessing and class-imbalance handling to improve detection of diverse and minority attack patterns.
 
 
 if time permits, following improvement directions can also be explored:
 
-Cross-Dataset Evaluation: Test the approach on multiple standard IDS datasets to assess robustness and generalization.
+- Cross-Dataset Evaluation: Test the approach on multiple standard IDS datasets to assess robustness and generalization.
 
-Post-processing Techniques: Consider lightweight strategies to reduce false positives and stabilize detection outputs.
+- Post-processing Techniques: Consider lightweight strategies to reduce false positives and stabilize detection outputs.
 
-Deployment Considerations: Ensure the solution remains efficient and practical for SOC environments.
+- Deployment Considerations: Ensure the solution remains efficient and practical for SOC environments.
 
 
 # THE FOLLOWING IS SUPPOSED TO BE DONE LATER
