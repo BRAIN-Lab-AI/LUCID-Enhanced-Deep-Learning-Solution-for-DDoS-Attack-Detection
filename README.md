@@ -2,21 +2,42 @@
 
 ## Project Metadata
 ### Authors
-- **Team:** Name1, Namw2
+- **Team:** Syed M Minhaj Naqvi
 - **Supervisor Name:** Dr. Muzammil Behzad
 - **Affiliations:** SABIC, ARAMCO and KFUPM (write your institution name, and/or KFUPM)
 
 ## Introduction
-Write 1-2 technical paragraphs (feel free to add images if you would like).
+Distributed Denial of Service (DDoS) attacks are one of the most disruptive threats to network security, often overwhelming critical infrastructure and degrading service availability. traditional Intrusion Detection Systems (IDS) rely heavily on signature-based or rule-based approaches which may fail against large-scale attack patterns.
+
+Recent research demonstrates that deep learning can provide effective mitigation of such attacks, enabling automated feature extraction and robust detection of malicious traffic flows. One such approach is LUCID (Lightweight CNN for DDoS Detection), which applies convolutional neural networks to flow-level traffic classification. LUCID achieves strong results while remaining lightweight enough for practical deployment.
+
+Despite this progress, challenges remain in ensuring robustness, minimizing false positives, and improving generalization across diverse datasets. This project, LUCID++, proposes enhancements to address these challenges while keeping efficiency in mind.
 
 ## Problem Statement
-Write 1-2 technical paragraphs (feel free to add images if you would like).
+While LUCID has demonstrated the feasibility of deep learning for lightweight DDoS detection, limitations remain in areas such as dataset diversity, performance consistency across different environments, and fine-tuning for real-world deployment.
+
+We will focus on how can we extend and refine the LUCID framework to improve detection accuracy, reduce false positives, and potentially even strengthen cross-dataset generalization while maintaining low computational cost suitable for SOC environments?
 
 ## Application Area and Project Domain
-Write 1-2 technical paragraphs (feel free to add images if you would like).
+The project is situated at the intersection of cybersecurity and deep learning, with a focus on network intrusion detection systems (NIDS). The intended application is real-time traffic monitoring within Security Operations Centers (SOCs).
 
 ## What is the paper trying to do, and what are you planning to do?
-Write 1-2 technical paragraphs (feel free to add images if you would like).
+The original LUCID work focuses on applying a convolutional neural network to network flow features for lightweight and accurate DDoS detection. It shows that a deep learning–based approach can outperform traditional detection methods across benchmark intrusion detection datasets.
+
+LUCID++ aims to:
+
+Model Optimization: Investigate methods to improve performance metrics (accuracy, F1-score, macro-F1, AUC) through refined training and evaluation strategies.
+
+Data Handling Enhancements: Explore better preprocessing and class-imbalance handling to improve detection of diverse and minority attack patterns.
+
+
+if time permits, following improvement directions can also be explored:
+
+Cross-Dataset Evaluation: Test the approach on multiple standard IDS datasets to assess robustness and generalization.
+
+Post-processing Techniques: Consider lightweight strategies to reduce false positives and stabilize detection outputs.
+
+Deployment Considerations: Ensure the solution remains efficient and practical for SOC environments.
 
 
 # THE FOLLOWING IS SUPPOSED TO BE DONE LATER
