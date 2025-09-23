@@ -31,7 +31,7 @@ The original LUCID work focuses on applying a convolutional neural network to ne
 - Data Handling Enhancements: Explore better preprocessing and class-imbalance handling to improve detection of diverse and minority attack patterns.
 
 
-if time permits, following improvement directions can also be explored:
+If time permits, following improvement directions can also be explored:
 
 - Cross-Dataset Evaluation: Test the approach on multiple standard IDS datasets to assess robustness and generalization.
 
