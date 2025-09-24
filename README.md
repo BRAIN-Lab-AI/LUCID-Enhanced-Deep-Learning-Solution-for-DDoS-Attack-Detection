@@ -16,7 +16,7 @@ Despite this progress, challenges remain in ensuring robustness, minimizing fals
 ## Problem Statement
 While LUCID has demonstrated the feasibility of deep learning for lightweight DDoS detection, limitations remain in areas such as dataset diversity, performance consistency across different environments, and fine-tuning for real-world deployment.
 
-We will focus on how can we extend and refine the LUCID framework to improve detection accuracy, reduce false positives, and potentially even strengthen cross-dataset generalization while maintaining low computational cost suitable for SOC environments.
+We will focus on how we can extend and refine the LUCID framework to improve detection accuracy, reduce false positives, and potentially even strengthen cross-dataset generalization while maintaining low computational cost suitable for SOC environments.
 
 ## Application Area and Project Domain
 The project is situated at the intersection of cybersecurity and deep learning, with a focus on network intrusion detection systems (NIDS). The intended application is real-time traffic monitoring within Security Operations Centers (SOCs).
@@ -31,7 +31,7 @@ The original LUCID work focuses on applying a convolutional neural network to ne
 - Data Handling Enhancements: Explore better preprocessing and class-imbalance handling to improve detection of diverse and minority attack patterns.
 
 
-If time permits, following improvement directions can also be explored:
+If time permits, we will also explore:
 
 - Cross-Dataset Evaluation: Test the approach on multiple standard IDS datasets to assess robustness and generalization.
 
