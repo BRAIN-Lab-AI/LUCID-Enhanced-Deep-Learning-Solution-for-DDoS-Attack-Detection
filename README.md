@@ -4,7 +4,7 @@
 ### Authors
 - **Team:** Syed M Minhaj Naqvi
 - **Supervisor Name:** Dr. Muzammil Behzad
-- **Affiliations:** SABIC, ARAMCO and KFUPM (write your institution name, and/or KFUPM)
+- **Affiliations:** KFUPM
 
 ## Introduction
 Distributed Denial of Service (DDoS) attacks are one of the most disruptive threats to network security, often overwhelming critical infrastructure and degrading service availability. traditional Intrusion Detection Systems (IDS) rely heavily on signature-based or rule-based approaches which may fail against large-scale attack patterns.
