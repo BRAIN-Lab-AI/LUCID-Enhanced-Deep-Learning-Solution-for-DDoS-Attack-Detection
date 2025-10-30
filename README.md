@@ -47,10 +47,10 @@ If time permits, we will also explore:
 - **Report:** [Project Report](/report.pdf)
 
 ### Reference Paper
-- [High-Resolution Image Synthesis with Latent Diffusion Models](https://arxiv.org/abs/2112.10752)
+- [Lucid: A Practical, Lightweight Deep Learning Solution for DDoS Attack Detection](https://ieeexplore.ieee.org/document/8984222)
 
 ### Reference Dataset
-- [LAION-5B Dataset](https://laion.ai/blog/laion-5b/)
+- [UNB CIC-DDoS2019 dataset](https://www.unb.ca/cic/datasets/ddos-2019.html)
 
 
 ## Project Technicalities
