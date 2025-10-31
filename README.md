@@ -66,9 +66,10 @@ If time permits, we will also explore:
 - **GridSearchCV:** A Scikit-learn utility used to perform an exhaustive search over a specified parameter grid to find the best-performing model hyperparameters.
 
 ### Problem Statements
-- **Problem 1:** Achieving high-resolution and detailed images using conventional diffusion models remains challenging.
-- **Problem 2:** Existing models suffer from slow inference times during the image generation process.
-- **Problem 3:** There is limited capability in performing style transfer and generating diverse artistic variations.
+- **Validate LUCID on a Modern Dataset:** The original LUCID paper demonstrated high performance on datasets from 2012, 2017, and 2018. This project's first goal was to establish a performance baseline for this architecture on the newer, more complex CIC-DDoS2019 dataset.
+- **Improve Baseline Performance:** The second goal was to enhance the original LUCID architecture with modern deep learning techniques to improve its detection accuracy and balance.
+- **Address the Performance-Overhead Trade-off:** While many deep learning models are effective, their computational cost makes them impractical for real-time edge deployment. We aim to improve LUCID's accuracy while maintaining its lightweight philosophy.
+- **Reduce False Positives:** In a real-world setting, a high False Positive Rate (FPR) can overwhelm security analysts with "alert fatigue." A key goal was to find a model that balances a high detection rate (TPR) with a very low FPR.
 
 ### Loopholes or Research Areas
 - **Evaluation Metrics:** Lack of robust metrics to effectively assess the quality of generated images.
