@@ -139,7 +139,7 @@ The project is divided into two main stages: Preprocessing and Training.
 5. **Evaluate the Model:**
     To generate the ROC curve and classification report from the saved model, you can use a separate evaluation script.
     ```bash
-    python  lucid_cnn_*.py --predict ./sample-dataset/ --model ./sample-dataset/10t-10n-DOS2019-LUCID.h5
+    python  lucid_cnn_*.py --predict ./sample-dataset/ --model ./output/10t-10n-DOS2019-LUCID.h5
     #Again, "*" is wildcard. For baseline case, use "lucid_cnn_original.py" and for enhanced case use "lucid_cnn_enhanced.py" 
     ```
     
