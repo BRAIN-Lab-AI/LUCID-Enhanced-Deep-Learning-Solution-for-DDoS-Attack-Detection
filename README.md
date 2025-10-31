@@ -145,7 +145,7 @@ The project is divided into two main stages: Preprocessing and Training.
 ## Acknowledgments
 - **Original Authors:** This project is a direct extension of the work by Doriguzzi-Corin, et al. [1].
 - **Dataset Provider:** The Canadian Institute for Cybersecurity (CIC) for providing the high-quality CIC-DDoS2019 dataset.
-- **Individuals:** Special thanks to [Professor/Mentor/Colleague Name] for the invaluable guidance and support throughout this project.
+- **Individuals:** Special thanks to Dr. Muzammil Behzad for the invaluable guidance and support throughout this project.
 
 ## References
 [1] R. Doriguzzi-Corin, S. Millar, S. Scott-Hayward, J. Martínez-del-Rincón, and D. Siracusa, "LUCID: A Practical, Lightweight Deep Learning Solution for DDoS Attack Detection," IEEE Transactions on Network and Service Management, vol. 17, no. 2, pp. 876-889, 2020.
