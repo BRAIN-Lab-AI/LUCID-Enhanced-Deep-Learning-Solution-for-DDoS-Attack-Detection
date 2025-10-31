@@ -144,7 +144,7 @@ The project is divided into two main stages: Preprocessing and Training.
 
 ## Acknowledgments
 - **Original Authors:** This project is a direct extension of the work by Doriguzzi-Corin, et al. [1].
-- **Dataset Provider:** The Canadian Institute for Cybersecurity (CIC) for providing the high-quality0 [CIC-DDoS2019 dataset](https://www.unb.ca/cic/datasets/ddos-2019.html).
+- **Dataset Provider:** The Canadian Institute for Cybersecurity (CIC) for providing the high-quality [CIC-DDoS2019 dataset](https://www.unb.ca/cic/datasets/ddos-2019.html).
 - **Individuals:** Special thanks to Dr. Muzammil Behzad for the invaluable guidance and support throughout this project.
 
 ## References
