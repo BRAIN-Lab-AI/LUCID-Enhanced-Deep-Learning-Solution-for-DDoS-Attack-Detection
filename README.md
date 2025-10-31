@@ -131,14 +131,14 @@ The project is divided into two main stages: Preprocessing and Training.
 4. **Run Training & Hyperparameter Search:**
     Once training is complete, use the inference script to generate images.
     ```bash
-    python lucid_cnn_*.py --train ./sample-dataset/ --epochs 1000 --cv 5 # The "*" is wildcard. For baseline case, use "lucid_cnn_original.py" and for enhanced case use "lucid_cnn_enhanced.py" 
+    python lucid_cnn_\*.py --train ./sample-dataset/ --epochs 1000 --cv 5 # The "*" is wildcard. For baseline case, use "lucid_cnn_original.py" and for enhanced case use "lucid_cnn_enhanced.py" 
     ```
     At the end, the best model will be saved to the ./output/ directory and the final parameters will be printed to the console.
 
 5. **Evaluate the Model:**
     To generate the ROC curve and classification report from the saved model, you can use a separate evaluation script.
     ```bash
-    python  lucid_cnn_*.py --predict ./sample-dataset/ --model ./sample-dataset/10t-10n-DOS2019-LUCID.h5  # Again, "*" is wildcard. For baseline case, use "lucid_cnn_original.py" and for enhanced case use "lucid_cnn_enhanced.py" 
+    python  lucid_cnn_\*.py --predict ./sample-dataset/ --model ./sample-dataset/10t-10n-DOS2019-LUCID.h5  # Again, "*" is wildcard. For baseline case, use "lucid_cnn_original.py" and for enhanced case use "lucid_cnn_enhanced.py" 
     ```
     
 
