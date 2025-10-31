@@ -99,7 +99,7 @@ The project is divided into two main stages: Preprocessing and Training.
 
 2. **Training Workflow:**
    - **Input:** The preprocessed .hdf5 files.
-   - **Data Loading:** The lucid_cnn_mod1.py script loads the data and performs the final float32 type casting and label reshaping.
+   - **Data Loading:** The lucid_cnn_*.py scripts loads the data and performs the final float32 type casting and label reshaping.
    - **Hyperparameter Search:** GridSearchCV is initialized with the LUCID++ architecture and a grid of 1920 parameter combinations.
    - **Training & Validation:** The script trains and validates 1,920 models (384 combinations x 5 folds) to find the single best set of hyperparameters.
    - **Final Fit:** GridSearchCV automatically re-trains a final "champion" model on the combined training and validation data using the best parameters.
@@ -109,8 +109,8 @@ The project is divided into two main stages: Preprocessing and Training.
 
 1. **Clone the Repository:**
     ```bash
-    git clone https://github.com/yourusername/enhanced-stable-diffusion.git
-    cd enhanced-stable-diffusion
+    git clone https://github.com/BRAIN-Lab-AI/LUCID-Enhanced-Deep-Learning-Solution-for-DDoS-Attack-Detection.git
+    cd LUCID-Enhanced-Deep-Learning-Solution-for-DDoS-Attack-Detection
     ```
 
 2. **Set Up the Environment:**
@@ -121,17 +121,26 @@ The project is divided into two main stages: Preprocessing and Training.
     pip install -r requirements.txt
     ```
 
-3. **Train the Model:**
-    Configure the training parameters in the provided configuration file and run:
+3. **Run Preprocessing:**
+    Run the following commands step-by-step:
     ```bash
-    python train.py --config configs/train_config.yaml
+    python lucid_dataset_parser.py --dataset_type DOS2019 --dataset_folder ./sample-dataset/ --packets_per_flow 10 --dataset_id DOS2019 --time_window 10
+    python lucid_dataset_parser.py --preprocess_folder ./sample-dataset/
     ```
 
-4. **Generate Images:**
+4. **Run Training & Hyperparameter Search:**
     Once training is complete, use the inference script to generate images.
     ```bash
-    python inference.py --checkpoint path/to/checkpoint.pt --input "A surreal landscape with mountains and rivers"
+    python lucid_cnn_*.py --train ./sample-dataset/ --epochs 1000 --cv 5 # The "*" is wildcard. For baseline case, use "lucid_cnn_original.py" and for enhanced case use "lucid_cnn_enhanced.py" 
     ```
+    At the end, the best model will be saved to the ./output/ directory and the final parameters will be printed to the console.
+
+5. **Evaluate the Model:**
+    To generate the ROC curve and classification report from the saved model, you can use a separate evaluation script.
+    ```bash
+    python  lucid_cnn_*.py --predict ./sample-dataset/ --model ./sample-dataset/10t-10n-DOS2019-LUCID.h5  # Again, "*" is wildcard. For baseline case, use "lucid_cnn_original.py" and for enhanced case use "lucid_cnn_enhanced.py" 
+    ```
+    
 
 ## Acknowledgments
 - **Open-Source Communities:** Thanks to the contributors of PyTorch, Hugging Face, and other libraries for their amazing work.
