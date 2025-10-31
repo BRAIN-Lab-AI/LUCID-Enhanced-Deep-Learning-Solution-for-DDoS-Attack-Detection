@@ -131,18 +131,21 @@ The project is divided into two main stages: Preprocessing and Training.
 4. **Run Training & Hyperparameter Search:**
     Once training is complete, use the inference script to generate images.
     ```bash
-    python lucid_cnn_\*.py --train ./sample-dataset/ --epochs 1000 --cv 5 # The "*" is wildcard. For baseline case, use "lucid_cnn_original.py" and for enhanced case use "lucid_cnn_enhanced.py" 
+    python lucid_cnn_*.py --train ./sample-dataset/ --epochs 1000 --cv 5 # The "*" is wildcard. For baseline case, use "lucid_cnn_original.py" and for enhanced case use "lucid_cnn_enhanced.py" 
     ```
     At the end, the best model will be saved to the ./output/ directory and the final parameters will be printed to the console.
 
 5. **Evaluate the Model:**
     To generate the ROC curve and classification report from the saved model, you can use a separate evaluation script.
     ```bash
-    python  lucid_cnn_\*.py --predict ./sample-dataset/ --model ./sample-dataset/10t-10n-DOS2019-LUCID.h5  # Again, "*" is wildcard. For baseline case, use "lucid_cnn_original.py" and for enhanced case use "lucid_cnn_enhanced.py" 
+    python  lucid_cnn_*.py --predict ./sample-dataset/ --model ./sample-dataset/10t-10n-DOS2019-LUCID.h5  # Again, "*" is wildcard. For baseline case, use "lucid_cnn_original.py" and for enhanced case use "lucid_cnn_enhanced.py" 
     ```
     
 
 ## Acknowledgments
-- **Open-Source Communities:** Thanks to the contributors of PyTorch, Hugging Face, and other libraries for their amazing work.
-- **Individuals:** Special thanks to bla, bla, bla for the amazing team effort, invaluable guidance and support throughout this project.
-- **Resource Providers:** Gratitude to ABC-organization for providing the computational resources necessary for this project.
+- **Original Authors:** This project is a direct extension of the work by Doriguzzi-Corin, et al. [1].
+- **Dataset Provider:** The Canadian Institute for Cybersecurity (CIC) for providing the high-quality CIC-DDoS2019 dataset.
+- **Individuals:** Special thanks to [Professor/Mentor/Colleague Name] for the invaluable guidance and support throughout this project.
+
+## References
+[1] R. Doriguzzi-Corin, S. Millar, S. Scott-Hayward, J. Martínez-del-Rincón, and D. Siracusa, "LUCID: A Practical, Lightweight Deep Learning Solution for DDoS Attack Detection," IEEE Transactions on Network and Service Management, vol. 17, no. 2, pp. 876-889, 2020.
