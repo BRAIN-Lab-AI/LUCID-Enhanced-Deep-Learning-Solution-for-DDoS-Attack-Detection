@@ -56,16 +56,14 @@ If time permits, we will also explore:
 ## Project Technicalities
 
 ### Terminologies
-- **Diffusion Model:** A generative model that progressively transforms random noise into coherent data.
-- **Latent Space:** A compressed, abstract representation of data where complex features are captured.
-- **UNet Architecture:** A neural network with an encoder-decoder structure featuring skip connections for better feature preservation.
-- **Text Encoder:** A model that converts text into numerical embeddings for downstream tasks.
-- **Perceptual Loss:** A loss function that measures high-level differences between images, emphasizing perceptual similarity.
-- **Tokenization:** The process of breaking down text into smaller units (tokens) for processing.
-- **Noise Vector:** A randomly generated vector used to initialize the diffusion process in generative models.
-- **Decoder:** A network component that transforms latent representations back into image space.
-- **Iterative Refinement:** The process of gradually improving the quality of generated data through multiple steps.
-- **Conditional Generation:** The process where outputs are generated based on auxiliary inputs, such as textual descriptions.
+- **DDoS Attack:**  A malicious attempt to disrupt a network or service by overwhelming it with a flood of internet traffic.
+- **Lightweight Model** A neural network with a very small number of parameters, designed to run on resource-constrained devices (e.g., edge gateways).
+- **Flow-based Detection:** The technique of grouping packets by their source/destination (bi-directional flow) before analysis.
+- **Flow Fragment**  A sample of traffic containing the first n packets (e.g., 10 packets) of a flow within a specific t second time window (e.g., 10 seconds).
+- **1D Convolution:** A convolutional operation that slides in only one dimension. In this project, it is implemented with a Conv2D layer where the kernel width matches the feature width, forcing it to convolve only along the time (packet) axis.
+- **Batch Normalization:** A layer that stabilizes and accelerates training by normalizing the output of the previous layer.
+- **AdamW:** An optimizer that improves upon Adam by implementing weight decay more effectively, which helps prevent overfitting.
+- **GridSearchCV:** A Scikit-learn utility used to perform an exhaustive search over a specified parameter grid to find the best-performing model hyperparameters.
 
 ### Problem Statements
 - **Problem 1:** Achieving high-resolution and detailed images using conventional diffusion models remains challenging.
