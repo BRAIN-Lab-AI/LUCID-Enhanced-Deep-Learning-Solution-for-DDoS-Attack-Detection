@@ -65,50 +65,45 @@ If time permits, we will also explore:
 - **AdamW:** An optimizer that improves upon Adam by implementing weight decay more effectively, which helps prevent overfitting.
 - **GridSearchCV:** A Scikit-learn utility used to perform an exhaustive search over a specified parameter grid to find the best-performing model hyperparameters.
 
-### Problem Statements
+### Project Goals and Motivation
 - **Validate LUCID on a Modern Dataset:** The original LUCID paper demonstrated high performance on datasets from 2012, 2017, and 2018. This project's first goal was to establish a performance baseline for this architecture on the newer, more complex CIC-DDoS2019 dataset.
 - **Improve Baseline Performance:** The second goal was to enhance the original LUCID architecture with modern deep learning techniques to improve its detection accuracy and balance.
 - **Address the Performance-Overhead Trade-off:** While many deep learning models are effective, their computational cost makes them impractical for real-time edge deployment. We aim to improve LUCID's accuracy while maintaining its lightweight philosophy.
 - **Reduce False Positives:** In a real-world setting, a high False Positive Rate (FPR) can overwhelm security analysts with "alert fatigue." A key goal was to find a model that balances a high detection rate (TPR) with a very low FPR.
 
-### Loopholes or Research Areas
-- **Evaluation Metrics:** Lack of robust metrics to effectively assess the quality of generated images.
-- **Output Consistency:** Inconsistencies in output quality when scaling the model to higher resolutions.
-- **Computational Resources:** Training requires significant GPU compute resources, which may not be readily accessible.
+### Our Proposed Solution: LUCID++
+To achieve these goals, we introduce LUCID++, an enhanced version of the original architecture. The key enhancements are:
 
-### Problem vs. Ideation: Proposed 3 Ideas to Solve the Problems
-1. **Optimized Architecture:** Redesign the model architecture to improve efficiency and balance image quality with faster inference.
-2. **Advanced Loss Functions:** Integrate novel loss functions (e.g., perceptual loss) to better capture artistic nuances and structural details.
-3. **Enhanced Data Augmentation:** Implement sophisticated data augmentation strategies to improve the model’s robustness and reduce overfitting.
+- **AdamW Optimizer:** We replace the standard Adam optimizer with AdamW and include weight_decay in our hyperparameter search, improving model generalization.
+- **Batch Normalization:** We add a BatchNormalization layer directly after the convolutional layer. This stabilizes training and allows the model to converge to a more robust solution.
+- **Hidden Dense Layer:** We add a small, fully-connected (Dense) layer after the pooling/flatten stage. This gives the model additional capacity to learn complex, non-linear combinations of the features extracted by the CNN, leading to more sophisticated classification.
 
-### Proposed Solution: Code-Based Implementation
-This repository provides an implementation of the enhanced stable diffusion model using PyTorch. The solution includes:
-
-- **Modified UNet Architecture:** Incorporates residual connections and efficient convolutional blocks.
-- **Novel Loss Functions:** Combines Mean Squared Error (MSE) with perceptual loss to enhance feature learning.
-- **Optimized Training Loop:** Reduces computational overhead while maintaining performance.
+This repository provides the code to preprocess the data, run the GridSearchCV to find the best model, and evaluate its performance.
 
 ### Key Components
-- **`model.py`**: Contains the modified UNet architecture and other model components.
-- **`train.py`**: Script to handle the training process with configurable parameters.
-- **`utils.py`**: Utility functions for data processing, augmentation, and metric evaluations.
-- **`inference.py`**: Script for generating images using the trained model.
+- **lucid_cnn_original.py** and **lucid_cnn_enhanced.py** are the two main Python scripts. They contains the logic for training (--train), hyperparameter tuning (GridSearchCV), and evaluation (--predict).
+- **lucid_dataset_parser.py** is the preprocessing script. This must be run first to convert raw .pcap files into the .hdf5 datasets used for training.
+- **util_functions.py** is a utility file containing helper functions for data loading (load_dataset) and preprocessing (normalize_and_padding).
+- **requirements.txt** is a list of all required Python libraries.
 
 ## Model Workflow
-The workflow of the Enhanced Stable Diffusion model is designed to translate textual descriptions into high-quality artistic images through a multi-step diffusion process:
+The project is divided into two main stages: Preprocessing and Training.
 
-1. **Input:**
-   - **Text Prompt:** The model takes a text prompt (e.g., "A surreal landscape with mountains and rivers") as the primary input.
-   - **Tokenization:** The text prompt is tokenized and processed through a text encoder (such as a CLIP model) to obtain meaningful embeddings.
-   - **Latent Noise:** A random latent noise vector is generated to initialize the diffusion process, which is then conditioned on the text embeddings.
+1. **Preprocessing Workflow:**
+   - **Input:** Raw .pcap traffic files from the CIC-DDoS2019 dataset.
+   - **Parsing:** lucid_dataset_parser.py (using PyShark) reads the .pcap files.
+   - **Flow Grouping:** Packets are grouped into bi-directional flows and segmented into 10-second time windows.
+   - **Fragmentation:** Each flow is sampled into fragments of the first 10 packets.
+   - **Feature Extraction:** 11 features (e.g., packet length, IP flags, TCP flags) are extracted for each packet.
+   - **Normalization & Saving:** The fragments are normalized, padded to a uniform (10, 11) shape, and saved as three .hdf5 files: train, val, and test.
 
-2. **Diffusion Process:**
-   - **Iterative Refinement:** The conditioned latent vector is fed into a modified UNet architecture. The model iteratively refines this vector by reversing a diffusion process, gradually reducing noise while preserving the text-conditioned features.
-   - **Intermediate States:** At each step, intermediate latent representations are produced that increasingly capture the structure and details dictated by the text prompt.
-
-3. **Output:**
-   - **Decoding:** The final refined latent representation is passed through a decoder (often part of a Variational Autoencoder setup) to generate the final image.
-   - **Generated Image:** The output is a synthesized image that visually represents the input text prompt, complete with artistic style and detail.
+2. **Training Workflow:**
+   - **Input:** The preprocessed .hdf5 files.
+   - **Data Loading:** The lucid_cnn_mod1.py script loads the data and performs the final float32 type casting and label reshaping.
+   - **Hyperparameter Search:** GridSearchCV is initialized with the LUCID++ architecture and a grid of 1920 parameter combinations.
+   - **Training & Validation:** The script trains and validates 1,920 models (384 combinations x 5 folds) to find the single best set of hyperparameters.
+   - **Final Fit:** GridSearchCV automatically re-trains a final "champion" model on the combined training and validation data using the best parameters.
+   - **Output:** The script saves the best model as a .h5 file and prints the final classification report and metrics.
 
 ## How to Run the Code
 
