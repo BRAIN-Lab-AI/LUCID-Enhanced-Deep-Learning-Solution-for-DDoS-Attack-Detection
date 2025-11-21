@@ -28,9 +28,6 @@ The original LUCID work focuses on applying a convolutional neural network to ne
 
 - Model Optimization: Investigate methods to improve performance metrics (accuracy, F1-score, macro-F1, AUC) through refined training and evaluation strategies.
 
-- Data Handling Enhancements: Explore better preprocessing and class-imbalance handling to improve detection of diverse and minority attack patterns.
-
-
 If time permits, we will also explore:
 
 - Cross-Dataset Evaluation: Test the approach on multiple standard IDS datasets to assess robustness and generalization.
