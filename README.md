@@ -40,7 +40,7 @@ If time permits, we will also explore:
 # THE FOLLOWING IS SUPPOSED TO BE DONE LATER
 
 ### Project Documents
-- **Presentation:** [Project Presentation](/presentation.pptx)
+- **Presentation:** [Project Presentation](/Presentation.pptx)
 - **Report:** [Project Report](/report.pdf)
 
 ### Reference Paper
