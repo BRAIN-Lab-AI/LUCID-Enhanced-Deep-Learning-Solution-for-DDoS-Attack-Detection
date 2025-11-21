@@ -71,9 +71,9 @@ If time permits, we will also explore:
 ### Our Proposed Solution: LUCID++
 To achieve these goals, we introduce LUCID++, an enhanced version of the original architecture. The key enhancements are:
 
-- **AdamW Optimizer:** We replace the standard Adam optimizer with AdamW and include weight_decay in our hyperparameter search, improving model generalization.
 - **Batch Normalization:** We add a BatchNormalization layer directly after the convolutional layer. This stabilizes training and allows the model to converge to a more robust solution.
 - **Hidden Dense Layer:** We add a small, fully-connected (Dense) layer after the pooling/flatten stage. This gives the model additional capacity to learn complex, non-linear combinations of the features extracted by the CNN, leading to more sophisticated classification.
+- **Dropout:** We introduce a dropout layer after the hidden dense layer in order to prevent regularization.
 
 This repository provides the code to preprocess the data, run the GridSearchCV to find the best model, and evaluate its performance.
 
