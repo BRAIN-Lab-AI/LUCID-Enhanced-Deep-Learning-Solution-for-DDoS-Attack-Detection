@@ -37,7 +37,6 @@ If time permits, we will also explore:
 - Deployment Considerations: Ensure the solution remains efficient and practical for SOC environments.
 
 
-# THE FOLLOWING IS SUPPOSED TO BE DONE LATER
 
 ### Project Documents
 - **Presentation:** [Project Presentation](/Presentation.pptx)
